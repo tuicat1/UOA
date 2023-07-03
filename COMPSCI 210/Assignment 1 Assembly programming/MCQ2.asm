@@ -1,0 +1,14 @@
+		.ORIG	x3000
+		AND	R3, R3, #0
+		LD		R2, VALB
+		LD		R1, VALA
+; Loop
+AGAIN	BRnz 	EXIT
+		ADD	R3, R3, R2
+		ADD	R1, R1, #-1 	
+		BRnzp 	AGAIN
+;
+EXIT	HALT
+VALA	.FILL x0004
+VALB	.FILL 0x0005;
+		.END
